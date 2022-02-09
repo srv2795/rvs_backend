@@ -6,3 +6,4 @@ I'll place my example code, sql database queries and all the technical materials
 # My profile
 Name : Ran Vijay Singh
 Work : Software developer
+Locatoin : Noida
