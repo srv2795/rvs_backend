@@ -12,5 +12,6 @@ public class ArrayDemo1 {
         System.out.println();
         System.out.println("Array taken from user as input.........");
 
+        System.out.println("Array taken from user as input.");
     }
 }
