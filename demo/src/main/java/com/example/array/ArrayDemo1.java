@@ -10,7 +10,7 @@ public class ArrayDemo1 {
         for(int i: arr)
             arr[i] = sc.nextInt();
         System.out.println();
-        System.out.println("Array taken from user as input..");
+        System.out.println("Array taken from user as input...........");
 
     }
 }
