@@ -10,7 +10,11 @@ public class ArrayDemo1 {
         for(int i: arr)
             arr[i] = sc.nextInt();
         System.out.println();
+<<<<<<< HEAD
         System.out.println("Array taken from user as input.............");
+=======
+        System.out.println("Array taken from user as input..");
+>>>>>>> e916b24669b1f626623d0d66b694722d5ec759eb
 
     }
 }
