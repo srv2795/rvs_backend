@@ -3,7 +3,7 @@ package com.example.corejavademo;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
-/*
+
 public class AtomicIntegerDemo {
     public static void main(String[] args) throws InterruptedException {
         Mythread mythread = new Mythread();
@@ -34,8 +34,8 @@ class Mythread extends Thread {
             System.out.println(count.getAndIncrement());
         }
     }
-}*/
-//=====================================================================================
+}
+
 class AtomicIntegerDemo1 {
     public static void main(String[] args) {
         ExecutorService service = Executors.newFixedThreadPool(2);
@@ -51,6 +51,7 @@ class AtomicIntegerDemo1 {
 
         Thread t1 = new Thread(r1);
         Thread t2 = new Thread(r2);
+
         t1.start();
         t2.start();
 
