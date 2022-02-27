@@ -1,6 +1,8 @@
 package com.example.springbootexample.service;
 
+import com.example.springbootexample.exception.EmptyListException;
 import com.example.springbootexample.model.Student;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -20,6 +22,9 @@ public class StudentService {
     }
 
     public List<Student> getAllStudent() {
+        if(studentList.size() == 0) {
+            throw new EmptyListException("400", "no element is list present");
+        }
         return studentList;
     }
 

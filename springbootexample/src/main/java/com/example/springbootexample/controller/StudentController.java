@@ -3,8 +3,12 @@ package com.example.springbootexample.controller;
 import com.example.springbootexample.model.Student;
 import com.example.springbootexample.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,8 +19,10 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/")
-    public List<Student> getAllStudent() {
-        return studentService.getAllStudent();
+    public ResponseEntity<?> getAllStudent() {
+        List<Student> list = studentService.getAllStudent();
+        //return studentService.getAllStudent();
+        return new ResponseEntity<List>(list, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
