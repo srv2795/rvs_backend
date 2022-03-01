@@ -9,7 +9,6 @@ public class ArrayDemo1 {
         int[] arr = new int[size];
         for(int i: arr)
             arr[i] = sc.nextInt();
-        System.out.println();
         System.out.println("Array entered from user as input.........");
     }
 }
