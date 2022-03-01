@@ -7,7 +7,7 @@ public class TwoDimensionArray {
 
         int[][] arr = new int[4][4];
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter array elements..");
+        System.out.println("Enter array elements...");
         for(int i=0;i<4;i++) {
             for(int j=0;j<4;j++) {
                 arr[i][j] = scanner.nextInt();
