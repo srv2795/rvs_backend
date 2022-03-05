@@ -6,28 +6,23 @@ These two service are communicating with the help of RestTemplate.
 Then We have implemented as API Gateway. 
 Using this gateway both application can be accessed with single endpoint(that is the api gateway port).
 
-<Userservice>
-
+Userservice
 port : 8082
 GET api
 1. /user/all
 2. /user/all/{userId}
 
-<ContactService>
-
+ContactService
 port : 8083
 GET api
 1. /contacts/all
 2. /contacts/{userId}
 
-<EurekaServer>  (provide the gateway to access both the services i.e. UserService and ContactService)
-
+EurekaServer :  (Both microservices i.e. UserService and ContactService are registered as eureka client on the eureka server)
 port : 8761 (default port)
 
-<API Gateway>
-
+API Gateway : (provide the gateway to access both the services i.e. UserService and ContactService)
 port : 999
 
-<Hystrix-dashboard> (fault tolerance library)
-
+Hystrix-dashboard (fault tolerance library for realtime monitoring)
 port : 9995
