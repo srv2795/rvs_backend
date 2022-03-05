@@ -31,7 +31,7 @@ public class UserController {
     @GetMapping("/all/{id}")
     public User getUserById(@PathVariable("id") int id) {
         User user = userService.getUserById(id);
-        List<Contact> list = restTemplate.getForObject("http://localhost:8080/contacts/"
+        List<Contact> list = restTemplate.getForObject("http://contact-service:8083/contacts/"
                 + user.getUserId(), List.class);
         user.setContacts(list);
         return user;
