@@ -22,7 +22,7 @@ EurekaServer :  (Both microservices i.e. UserService and ContactService are regi
 port : 8761 (default port)
 
 API Gateway : (provide the gateway to access both the services i.e. UserService and ContactService)
-port : 999
+port : 8999
 
 Hystrix-dashboard (fault tolerance library for realtime monitoring)
 port : 9995
