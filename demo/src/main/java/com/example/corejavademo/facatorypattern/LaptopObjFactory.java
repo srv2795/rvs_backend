@@ -1,4 +1,9 @@
-package com.example.array.facatorypattern;
+package com.example.corejavademo.facatorypattern;
+
+import com.example.corejavademo.facatorypattern.Asus;
+import com.example.corejavademo.facatorypattern.Dell;
+import com.example.corejavademo.facatorypattern.Hp;
+import com.example.corejavademo.facatorypattern.Laptop;
 
 public class LaptopObjFactory {
     Laptop obj = null;
