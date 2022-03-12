@@ -1,4 +1,4 @@
-package com.example.array.facatorypattern;
+package com.example.corejavademo.facatorypattern;
 
 public class Dell implements Laptop {
     public Dell() {
