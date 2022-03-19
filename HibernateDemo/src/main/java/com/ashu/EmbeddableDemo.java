@@ -1,5 +1,7 @@
 package com.ashu;
 
+import com.ashu.model.School;
+import com.ashu.model.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

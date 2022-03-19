@@ -8,12 +8,14 @@
         <property name="connection.username">ashu</property>
         <property name="connection.password">Srv@1995</property>
         <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
-        <mapping class="com.ashu.Student"/>
-        <mapping class="com.ashu.Address"/>
-        <mapping class="com.ashu.School"/>
-        <mapping class="com.ashu.Teacher"/>
+        <mapping class="com.ashu.model.Student"/>
+        <mapping class="com.ashu.model.Address"/>
+        <mapping class="com.ashu.model.School"/>
+        <mapping class="com.ashu.model.Teacher"/>
+        <mapping class="com.ashu.model.Answer"/>
+        <mapping class="com.ashu.model.Question"/>
 
     </session-factory>
 </hibernate-configuration>
