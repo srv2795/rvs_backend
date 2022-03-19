@@ -44,5 +44,6 @@ public class OneToOneMappingDemo {
         System.out.println(q.getQuestion());
         System.out.println(q.getAnswer().getAnswerId() + " : " +q.getAnswer().getAnswer());
         session.close();
+        factory.close();
     }
 }
