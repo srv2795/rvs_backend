@@ -16,6 +16,10 @@
         <mapping class="com.ashu.model.Teacher"/>
         <mapping class="com.ashu.model.Answer"/>
         <mapping class="com.ashu.model.Question"/>
+        <mapping class="com.ashu.onetomany.Person"/>
+        <mapping class="com.ashu.onetomany.Account"/>
+        <mapping class="com.ashu.manytomany.Emp"/>
+        <mapping class="com.ashu.manytomany.Proj"/>
 
     </session-factory>
 </hibernate-configuration>
