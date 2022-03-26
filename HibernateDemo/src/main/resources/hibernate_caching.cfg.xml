@@ -8,18 +8,11 @@
         <property name="connection.username">ashu</property>
         <property name="connection.password">Srv@1995</property>
         <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
-        <mapping class="com.ashu.model.Student"/>
-        <mapping class="com.ashu.model.Address"/>
-        <mapping class="com.ashu.model.School"/>
-        <mapping class="com.ashu.model.Teacher"/>
-        <mapping class="com.ashu.model.Answer"/>
-        <mapping class="com.ashu.model.Question"/>
-        <mapping class="com.ashu.onetomany.Person"/>
-        <mapping class="com.ashu.onetomany.Account"/>
-        <mapping class="com.ashu.manytomany.Emp"/>
-        <mapping class="com.ashu.manytomany.Proj"/>
+        <property name="cache.use_second_level_cache">true</property>
+        <property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        <mapping class="com.ashu.secondLevelCache.Vehicle"/>
 
     </session-factory>
 </hibernate-configuration>
