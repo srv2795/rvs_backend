@@ -17,6 +17,7 @@ public class Answer {
     @Column(name = "answerId")
     private int answerId;
 
+    @Column(name = "answer")
     private String answer;
 
     @OneToOne(mappedBy = "answer")

@@ -17,6 +17,7 @@ public class Question {
     @Column(name = "questionId")
     private int questionId;
 
+    @Column(name = "question")
     private String question;
 
     @OneToOne
