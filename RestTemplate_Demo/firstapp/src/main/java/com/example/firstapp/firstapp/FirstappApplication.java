@@ -13,4 +13,9 @@ public class FirstappApplication {
 		SpringApplication.run(FirstappApplication.class, args);
 	}
 
+	@Bean
+	public RestTemplate getRestTemplate() {
+		return new RestTemplate();
+	}
+
 }
