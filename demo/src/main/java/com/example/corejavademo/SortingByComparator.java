@@ -61,11 +61,11 @@ class StudentComparatorByRollno implements Comparator<Student> {
         }
 }
 
-class Student {
+class Student1 {
     private int rollno;
     private  String name;
 
-    public Student(int rollno, String name) {
+    public Student1(int rollno, String name) {
         this.rollno = rollno;
         this.name = name;
     }
