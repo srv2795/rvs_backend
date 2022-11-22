@@ -5,7 +5,7 @@ I'll place my example code, sql database queries and all the technical materials
 
 # My profile
 Name : Ran Vijay Singh
-Work : Software developer
-Location : Noida
+Work : Senior Software Engineer
+Location : Noida (Optum UHG)
 
-Personal_Access_Token : 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
+Personal_Access_Token : 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
