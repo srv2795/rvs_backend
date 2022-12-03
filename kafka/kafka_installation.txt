@@ -11,7 +11,7 @@ Prerequisites for Kafka server installation
 
 STEPS : 1. Download Zookeeper cluster with the link given below
 
-        https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
+        https://dlcdn.apache.org/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
 
         2. Untar the binary 
         3. go to   /apache-zookeeper-3.7.1-bin/conf
