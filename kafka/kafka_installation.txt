@@ -1,0 +1,69 @@
+Prerequisites for Kafka server installation
+
+1. Java version should be installed (Mine is OpenJdk 1.11.0 )
+
+        LAMU02GC73QMD6M:bin rsing414$ java --version
+        openjdk 11.0.16.1 2022-08-12
+        OpenJDK Runtime Environment Homebrew (build 11.0.16.1+0)
+        OpenJDK 64-Bit Server VM Homebrew (build 11.0.16.1+0, mixed mode)
+
+2. Compute : RAM (512 MB)
+
+STEPS : 1. Download Zookeeper cluster with the link given below
+
+        https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
+
+        2. Untar the binary 
+        3. go to   /apache-zookeeper-3.7.1-bin/conf
+        4. rename the config file zoo_sample_config.conf to zoo.cfg or any other name.
+        5. vim zoo.cfg 
+                remove everything from cinfig file and add below configuration and save the config file
+                    tickTime=2000
+                    initLimit=10
+                    syncLimit=5
+                    dataDir=/tmp/zookeeper
+                    clientPort=2181
+                    maxClientCnxns=60
+                    4lw.commands.whitelist=*
+        6. ./zkServer.sh start      Hit this command to zun zookeeper cluster {This command will run zookeeper cluter in background}
+            
+                                    OR YOU CAN USE OTHER COMMAND TO RUN ZOOKEPER CLUSTER IN THE FOREGROUND USING BELOW COMMAND
+            
+           ./zkServer.sh start-foreground
+
+        7. echo stat | nc localhost 2181   {Hit this command to check if the zookeeper cluster is running or not}
+        
+
+STEPS : 1. Download and install kafkaserver on localhost using link given below.
+
+        https://downloads.apache.org/kafka/3.3.1/kafka_2.13-3.3.1.tgz
+
+        2. untar the binary
+        3. go to /kafka/kafka_2.13-3.3.1/config/
+        4. vim server.properties {Open properties file and add some below changes}
+
+            a.  #The id of the broker. This must be set to a unique integer for each broker.
+                broker.id=1
+            b.  #listeners = PLAINTEXT://your.host.name:9092
+                listeners=PLAINTEXT://localhost:9092
+
+        5. save server.properties file and start the kafka server with below command.
+        6. Hit any of the command below to start kafka Server
+
+                    ./kafka-server-start.sh start
+                                OR
+                    ./kafka-server-start.sh server.properties
+
+        7. Now hit below command to check if any broker is attached to it or not.
+
+                    echo dump | nc localhost 2181 | grep brokers
+        
+
+NOTES : Other command may be usefull
+
+To check logs of kafa server hit below comand in logs folder: 
+
+        tail -100f server.log
+
+
+
