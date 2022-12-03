@@ -61,7 +61,7 @@ STEPS : 1. Download and install kafkaserver on localhost using link given below.
 
 NOTES : Other command may be usefull
 
-To check logs of kafa server hit below comand in logs folder: 
+To check logs of kafka server hit below comand in logs folder: 
 
         tail -100f server.log
 
