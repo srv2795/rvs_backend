@@ -65,5 +65,58 @@ To check logs of kafka server hit below comand in logs folder:
 
         tail -100f server.log
 
+Commands to create a topic in kafka.
+
+        >>> bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic myTopic --partitions 1 --replication-factor 1
+
+        output : Created topic myTopic.
+
+To list all the topics hit below command: 
+        >>> bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+To describe any topic hit below command 
+        >>> bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic myTopic
+
+        NOTE: Now start typing some messages for testing. Those messags will be started publshing to kafka consumer.
+
+To create a producer hit the below command
+        >>> bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic myTopic
+        >
+        >This is my first message 
+        >Just started producing messages...
+        >How r you
+        >i am prettty much fine and how about you 
+        >i am also fins
+        >fine*
 
 
+To create a comsumer hit the below command 
+        >>> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopic --from-beginning
+
+        This is my first message 
+        Just started producing messages...
+        How r you
+        i am prettty much fine and how about you 
+        i am also fins
+        fine*
+
+To list all the consumer groups in kafka cluster hit the below command
+        >>> bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+
+How to describe the consumer groups in the lsit hit the below command
+        >>> bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group <console-consumer-77086 (consumer_group_name)>
+
+NOTE:   __consumer_offsets store the information of all consumer groups.
+        
+        >>> bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+        
+        output:
+                __consumer_offsets
+                myTopic
+
+Create a new consumer with predefinde consumer group name:
+
+        >>> bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic myTopic --group ashuConsumerGroup
+
+        output:
+                One new consumer wll be created with new consumer group name : ashuConsumerGroup
