@@ -2,10 +2,13 @@ package com.example.GraphQLProject.graphqldemo;
 
 import com.example.GraphQLProject.graphqldemo.entity.Book;
 import com.example.GraphQLProject.graphqldemo.service.BookService;
+import graphql.schema.GraphQLScalarType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.graphql.execution.RuntimeWiringConfigurer;
 
 @SpringBootApplication
 public class GraphqldemoApplication implements CommandLineRunner {
@@ -16,7 +19,6 @@ public class GraphqldemoApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(GraphqldemoApplication.class, args);
 	}
-
 
 	@Override
 	public void run(String... args) throws Exception {

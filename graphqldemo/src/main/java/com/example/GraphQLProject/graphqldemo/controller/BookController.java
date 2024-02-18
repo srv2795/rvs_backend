@@ -1,9 +1,11 @@
 package com.example.GraphQLProject.graphqldemo.controller;
 
 import com.example.GraphQLProject.graphqldemo.entity.Book;
+import com.example.GraphQLProject.graphqldemo.entity.BookInput;
 import com.example.GraphQLProject.graphqldemo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +21,13 @@ public class BookController {
     private BookService bookService;
 
     /*@PostMapping("/")*/
-    public Book createBook(@RequestBody Book book) {
-        return this.bookService.createBook(book);
+    @MutationMapping("createABook")
+    public Book createBook(/*@RequestBody*/ @Argument BookInput book) {
+        Book b = new Book();
+        b.setTitle(book.getTitle());
+        b.setDesc(book.getDesc());
+        b.setAuthor(book.getAuthor());
+        return this.bookService.createBook(b);
     }
 
     /*@GetMapping("/all")*/
@@ -36,7 +43,7 @@ public class BookController {
     }
 
     /*@DeleteMapping("/remove/{id}")*/
-    public void deleteOneBook(/*@PathVariable("id")*/ Integer bookId) {
+    public void deleteOneBook(/*@PathVariable("id")*/ @Argument Integer bookId) {
         this.bookService.deleteBook(bookId);
     }
 }
