@@ -1,5 +1,6 @@
 type Mutation{
     createABook(book:BookInput):Book
+    deleteABook(bookId:ID!):String
 }
 
 input BookInput{

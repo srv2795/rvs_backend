@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -34,7 +35,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void deleteBook(Integer bookId) {
-        bookRepository.deleteById(bookId);
+    public String deleteBook(Integer bookId) {
+        Optional<Book> book = Optional.ofNullable(bookRepository.findById(bookId).orElseThrow(() -> new RuntimeException("Book with given id does not exist")));
+        bookRepository.delete(book.get());
+        return "Book with given Id got deleted...";
     }
 }

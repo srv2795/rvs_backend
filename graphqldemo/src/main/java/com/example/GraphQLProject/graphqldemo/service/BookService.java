@@ -14,5 +14,5 @@ public interface BookService {
 
     Book getSingleBook(Integer bookId);
 
-    void deleteBook(Integer bookId);
+    String deleteBook(Integer bookId);
 }

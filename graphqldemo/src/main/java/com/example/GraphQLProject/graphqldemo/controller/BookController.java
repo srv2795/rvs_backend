@@ -43,7 +43,8 @@ public class BookController {
     }
 
     /*@DeleteMapping("/remove/{id}")*/
-    public void deleteOneBook(/*@PathVariable("id")*/ @Argument Integer bookId) {
-        this.bookService.deleteBook(bookId);
+    @MutationMapping("deleteABook")
+    public String deleteOneBook(/*@PathVariable("id")*/ @Argument Integer bookId) {
+        return this.bookService.deleteBook(bookId);
     }
 }
