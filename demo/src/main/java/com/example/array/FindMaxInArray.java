@@ -21,7 +21,20 @@ public class FindMaxInArray {
         return 0;
     }
 
-    public static int[] sortArray(int[] brr) {
+    public static int[] sortArray(int[] arr) {
+        for(int i=0;i<arr.length;++i) {
+            int key = arr[i];
+            int j = i - 1;
+            while(j>=0 && arr[j] < key) {
+                arr[j+1] = arr[j];
+                j = j-1;
+            }
+            arr[j+1] = key;
+        }
+        return arr;
+    }
+
+    /*public static int[] sortArray(int[] brr) {
         for(int i=1;i<brr.length;++i) {
             int n = brr[i];
             int j = i -1;
@@ -32,5 +45,5 @@ public class FindMaxInArray {
             brr[j+1] = n;
         }
         return brr;
-    }
+    }*/
 }
