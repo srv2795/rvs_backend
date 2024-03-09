@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,9 +13,12 @@ import java.util.List;
 @Repository
 public class ProductDao {
 
-    private RedisTemplate template;
+
 
     private static final String PRODUCT_HASH_KEY = "Product";
+
+    @Autowired
+    private RedisTemplate template;
 
     public Product save(Product product) {
         template.opsForHash().put(PRODUCT_HASH_KEY, product.getId(), product);
@@ -25,11 +29,11 @@ public class ProductDao {
         return template.opsForHash().values(PRODUCT_HASH_KEY);
     }
 
-    public Product findProductById(int id) {
+    public Product findProductById(String id) {
         return (Product) template.opsForHash().get(PRODUCT_HASH_KEY, id);
     }
 
-    public String deleteProduct(int id) {
+    public String deleteProduct(String id) {
         template.opsForHash().delete(PRODUCT_HASH_KEY, id);
         return "Product removed !!!";
     }
