@@ -30,10 +30,12 @@ public class ProductDao {
     }
 
     public Product findProductById(String id) {
+        System.out.println("called findProductById().");
         return (Product) template.opsForHash().get(PRODUCT_HASH_KEY, id);
     }
 
     public String deleteProduct(String id) {
+        System.out.println("delete performed.");
         template.opsForHash().delete(PRODUCT_HASH_KEY, id);
         return "Product removed !!!";
     }
