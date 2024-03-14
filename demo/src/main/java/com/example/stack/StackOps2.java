@@ -12,7 +12,7 @@ public class StackOps2 {
         stack2.push(4);
         stack2.push(5);
         stack2.push(6);
-        System.out.println("Stack size is : "+ stack2.size());
+        System.out.println("Stack1 size is : "+ stack2.size());
         System.out.println("pop operation");
         stack2.pop();
         stack2.pop();
@@ -22,11 +22,11 @@ public class StackOps2 {
         stack2.pop();
         stack2.pop();
         stack2.checkEmpty();
-        System.out.println("Stack size now : "+ stack2.size());
+        System.out.println("Stack1 size now : "+ stack2.size());
         stack2.push(6);
         stack2.push(7);
         stack2.push(8);
-        System.out.println("Stack size now : "+ stack2.size());
+        System.out.println("Stack1 size now : "+ stack2.size());
         System.out.println("peek element is  : "+ stack2.peek());
     }
 }
@@ -37,7 +37,7 @@ class ArrayImplStack2 {
 
     public void push(int item) {
         if(top == stack2.length - 1) {
-            System.out.println("Stack is overflown...");
+            System.out.println("Stack1 is overflown...");
         } else {
             top++;
             stack2[top] = item;
@@ -52,7 +52,7 @@ class ArrayImplStack2 {
     public void pop() {
         int data = 0;
         if(top == -1) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack1 is empty");
         } else {
             data = stack2[top];
             stack2[top] = 0;
@@ -74,7 +74,7 @@ class ArrayImplStack2 {
         if(top == -1) {
             System.out.println("stack is empty");
         } else {
-            System.out.println("Stack is not empty");
+            System.out.println("Stack1 is not empty");
         }
     }
 }

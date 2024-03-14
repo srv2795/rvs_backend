@@ -2,40 +2,40 @@ package com.example.stack;
 
 public class StackOps {
     public static void main(String[] args) {
-        Stack stack = new Stack();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
-        stack.push(6);
+        Stack1 stack1 = new Stack1();
+        stack1.push(1);
+        stack1.push(2);
+        stack1.push(3);
+        stack1.push(4);
+        stack1.push(5);
+        stack1.push(6);
 
-        System.out.println("Stack size will be : "+ stack.size());
+        System.out.println("Stack1 size will be : "+ stack1.size());
 
         for(int i=0;i<5;i++) {
-            System.out.println(stack.pop() + " is poped from stack.");
+            System.out.println(stack1.pop() + " is poped from stack1.");
         }
-        System.out.println("stack size will be : "+ stack.size());
+        System.out.println("stack1 size will be : "+ stack1.size());
         System.out.println("Again trying to pop one element: ");
-        stack.pop();
+        stack1.pop();
 
-        System.out.println("Again data is pushed into stack: ");
-        stack.push(7);
-        stack.push(8);
-        stack.push(9);
-        System.out.println("performing peek operation : "+ stack.peek());
-        System.out.println("Again stack size will be : "+ stack.size());
+        System.out.println("Again data is pushed into stack1: ");
+        stack1.push(7);
+        stack1.push(8);
+        stack1.push(9);
+        System.out.println("performing peek operation : "+ stack1.peek());
+        System.out.println("Again stack1 size will be : "+ stack1.size());
     }
 }
 
-class Stack {
+class Stack1 {
     private int[] stack = new int[5];
     int top=0;
 
     public void push(int item) {
         System.out.println("PUSH Operation");
         if(top == (stack.length)) {
-            System.out.println("Stack is overflown.");
+            System.out.println("Stack1 is overflown.");
         } else {
             stack[top] = item;
             top++;
@@ -50,7 +50,7 @@ class Stack {
         System.out.println("POP Operation");
         int data=0;
         if(top == 0) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack1 is empty");
         } else {
             top--;
             data = stack[top];
