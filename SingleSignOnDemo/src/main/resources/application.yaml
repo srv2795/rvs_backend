@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: EvAJ596jlaMiRQhup6Hhoj8ojJy7dxsI
+            client-secret: W2Ip4yfpykgPPYg0SDZJ2zsKsUnThim7q6r55S9zHgl2QLDQ2IgC7UEG2iu5la4h
+            scope: openid+profile
+        provider:
+          okta:
+            authorization-uri: https://dev-f17buk1mdkdxyqek.us.auth0.com/authorize
+            token-uri: https://dev-f17buk1mdkdxyqek.us.auth0.com/oauth/token
+            user-info-uri: https://dev-f17buk1mdkdxyqek.us.auth0.com/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://dev-f17buk1mdkdxyqek.us.auth0.com/.well-known/jwks.json
