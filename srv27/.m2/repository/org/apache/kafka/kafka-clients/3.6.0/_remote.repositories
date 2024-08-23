@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Dec 15 23:19:00 IST 2023
+kafka-clients-3.6.0-test.jar>central=
+kafka-clients-3.6.0.pom>central=
+kafka-clients-3.6.0.jar>central=
