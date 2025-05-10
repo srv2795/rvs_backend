@@ -13,5 +13,9 @@ public class FindMinFromStream {
         Comparator<Integer> c = Comparator.comparing(x -> x);
         System.out.println("Minimum value is given below:");
         System.out.println(filteredList.stream().max(c).get());
+
+
     }
 }
+
+
