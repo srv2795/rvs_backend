@@ -4,7 +4,6 @@ public class ViewPattern {
     public static void main(String[] args) {
         int[] arr = new int[5];
         showPattern1(arr);
-
     }
 
     private static void showPattern1(int[] arr) {
@@ -14,7 +13,5 @@ public class ViewPattern {
             }
             System.out.println();
         }
-
-
     }
 }
